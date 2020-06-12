@@ -1,0 +1,74 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.bookstore { /* контейнер, определяющий максимальную ширину сетки*/
+  margin-right: auto;
+  margin-left: auto;
+  background-color: peachpuff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  color: orange;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.grid-item {
+  width: calc((100% - 20px * 4) / 4);
+  margin-right: 10px;
+  margin-right: 10px;
+  background-color: cornflowerblue;
+}
+
+@media (min-width: 1281px) {
+  
+  .bookstore { 
+    max-width: 1140px;
+  }
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .bookstore {
+    max-width: 1024px;
+  }
+  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .bookstore { 
+    max-width: 768px;
+  }
+  
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .bookstore { 
+    max-width: 481px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .bookstore { 
+    max-width: 320px;
+  }
+}
