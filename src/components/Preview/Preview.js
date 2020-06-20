@@ -6,7 +6,7 @@ import book_3 from '../../images/book_3.png';
 import book_4 from '../../images/book_4.png';
 import ShortenTitle from '../Utils/ShortenTitle';
 
-function Main() {
+function Preview() {
     const s = styles;
     const short = ShortenTitle;
     const book1 = {
@@ -54,10 +54,10 @@ function Main() {
             <img src={book_1} alt="Cover" />
           </div>
           <div>
-            <div className={s.book_properties}>{book1.title}</div>
+            <div className={s.book_properties}>{short(book1.title)}</div>
             <div className={s.book_price}>
               {book1.price}
-              <button className={s.button_buy}>/ В КОРЗИНУ</button>
+              <button className={s.button_buy}>В КОРЗИНУ</button>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ function Main() {
             <div className={s.book_properties}>{short(book2.title)}</div>
             <div className={s.book_price}>
               {book2.price}
-              <button className={s.button_buy}>/ В КОРЗИНУ</button>
+              <button className={s.button_buy}>В КОРЗИНУ</button>
               </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ function Main() {
             <div className={s.book_properties}>{short(book3.title)}</div>
             <div className={s.book_price}>
               {book3.price}
-              <button className={s.button_buy}>/ В КОРЗИНУ</button></div>
+              <button className={s.button_buy}>В КОРЗИНУ</button></div>
           </div>
         </div>
         <div className={s.book_item}>
@@ -89,10 +89,10 @@ function Main() {
             <img src={book_4} alt="Cover" />
           </div>
           <div>
-            <div className={s.book_properties}>{book4.title}</div>
+            <div className={s.book_properties}>{short(book4.title)}</div>
             <div className={s.book_price}>
               {book4.price}
-              <button className={s.button_buy}>/ В КОРЗИНУ</button>
+              <button className={s.button_buy}>В КОРЗИНУ</button>
               </div>
           </div>
         </div>
@@ -102,4 +102,4 @@ function Main() {
     )
 }
 
-export default Main;
+export default Preview;
