@@ -8,7 +8,7 @@ import ShortenTitle from '../Utils/ShortenTitle';
 
 function Preview() {
     const s = styles;
-    const short = ShortenTitle;
+    const short = ShortenTitle; //shorten title оставить
     const book1 = {
       title: 'HOW TO BE A BAWSE',
       writer: 'Lilly Singh',

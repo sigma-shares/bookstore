@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import SearchIcon from '@material-ui/icons/Search';
-//import { grey } from '@material-ui/core/colors';
 
 function Header() {
     const s = styles;
 
     return (
-        <div className={s.header}>
+        <div className={s.wrapper}>
             <div className={s.nav_home}><a href="#home">Книжный магазин</a></div>
             <ul className={s.nav_menu}>
              <li className={s.nav_link}><a href="#about">О нас</a></li>

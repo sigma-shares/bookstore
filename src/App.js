@@ -1,18 +1,15 @@
 import React from 'react';
-import styles from './components/Styles.module.scss';
+import s from './components/Styles.module.scss';
 import Header from './components/Header/Header';
-import Preview from './components/Preview/Preview';
-import Storage from './components/Storage';
+import Showcase from './components/Showcase/Showcase';
 
 function App() {
-  const s = styles;
 
   return (
     <div className="App">
       <div className = {s.bookstore}>
         <Header />
-        <Preview />
-        <Storage />
+        <Showcase />
         {/*<button className={s.button_main}>В КОРЗИНУ</button>*/}
         <div className={s.bottom_menu}></div>
         {/*<input name="myFile" type="file"></input>*/}
