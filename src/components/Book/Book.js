@@ -1,7 +1,7 @@
 import React from 'react';
-import s from '../components/Showcase/Showcase.module.scss';
-import book_1 from '../images/book_1.png';
-import shortenTitle from './Utils/ShortenTitle';
+import s from './Book.module.scss';
+import book_1 from '../../images/book_1.png';
+import shortenTitle from '../Utils/ShortenTitle';
 import { uniqueId } from 'lodash';
 
 export default (props) => {

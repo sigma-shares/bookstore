@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import s from '../Showcase/Showcase.module.scss';
-import Book from '../Book';
+import Book from '../Book/Book';
+import AddIcon from '@material-ui/icons/Add';
 
 function Showcase () {
     const [books, setBooks] = useState([]);
@@ -39,6 +40,7 @@ function Showcase () {
       },
     ];
 
+
     function storageHasBook() {
         if (localStorage.getItem('mybook')) {
             const localData = JSON.parse(localStorage.getItem('mybook'));
@@ -49,6 +51,22 @@ function Showcase () {
         } 
     };
 
+    function addBookButton() {
+        const newBook = [{
+            id:5,
+            title: 'BRAND-NEW BOOK',
+            writer: 'Wendy Doniger',
+            pages: '389',
+            writer_email: 'theringoftruth@yahoo.com',
+            publishing: 'mifbooks',
+            price: '$ 55',
+        }];
+
+        const localDataBefore = JSON.parse(localStorage.getItem('mybook'));
+        const localDataAfter = localDataBefore.concat(newBook);
+        localStorage.setItem('mybook', JSON.stringify(localDataAfter));
+    }
+
     useEffect(() => { 
       storageHasBook();
     }, []);    
@@ -57,8 +75,10 @@ function Showcase () {
 
     return(
         <div className={s.main}>
-            {books.map(item => Book(item))}
+           {books.map(item => Book(item))}
+            <button className={s.button} onClick={() => addBookButton()}><AddIcon color="disabled" fontSize="large" /></button>
        </div>
+       
        ) 
 }
 
