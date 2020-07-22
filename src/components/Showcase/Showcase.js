@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import s from '../Showcase/Showcase.module.scss';
 import Book from '../Book/Book';
 import AddIcon from '@material-ui/icons/Add';
+import Loader from '../Loader/Loader';
 
 function Showcase () {
     const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const bookStorage = [{id: 1, 
       title : 'HOW TO BE A BAWSE', 
@@ -45,9 +47,11 @@ function Showcase () {
         if (localStorage.getItem('mybook')) {
             const localData = JSON.parse(localStorage.getItem('mybook'));
             setBooks(localData);
+            console.log('if')
         } else {
             localStorage.setItem('mybook', JSON.stringify(bookStorage));
             setBooks(bookStorage);
+            console.log('else')
         } 
     };
 
@@ -65,6 +69,12 @@ function Showcase () {
         const localDataBefore = JSON.parse(localStorage.getItem('mybook'));
         const localDataAfter = localDataBefore.concat(newBook);
         localStorage.setItem('mybook', JSON.stringify(localDataAfter));
+        setLoading(true)
+        setTimeout(() => {
+            setBooks(localDataAfter)
+            setLoading(false)
+            console.log('addBookButton')
+        }, 2000) 
     }
 
     useEffect(() => { 
@@ -77,6 +87,7 @@ function Showcase () {
         <div className={s.main}>
            {books.map(item => Book(item))}
             <button className={s.button} onClick={() => addBookButton()}><AddIcon color="disabled" fontSize="large" /></button>
+            {loading && <Loader />}
        </div>
        
        ) 
